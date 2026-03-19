@@ -52,6 +52,7 @@
             InputTxt.Name = "InputTxt";
             InputTxt.Size = new Size(607, 45);
             InputTxt.TabIndex = 1;
+            InputTxt.KeyDown += InputTxt_KeyDown;
             // 
             // ListMsg
             // 

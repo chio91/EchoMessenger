@@ -11,9 +11,23 @@ namespace EchoMessenger
         {
             string typed_msg;
             typed_msg = InputTxt.Text;
-            ListMsg.Items.Add(typed_msg);
+            if (string.IsNullOrWhiteSpace(typed_msg) == false)
+                ListMsg.Items.Add(typed_msg);
             InputTxt.Clear();
+            InputTxt.Focus();
         }
 
+        private void InputTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                string typed_msg;
+                typed_msg = InputTxt.Text;
+                if (string.IsNullOrWhiteSpace(typed_msg) == false)
+                    ListMsg.Items.Add(typed_msg);
+                InputTxt.Clear();
+                InputTxt.Focus();
+            }
+        }
     }
 }
